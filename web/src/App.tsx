@@ -3,7 +3,8 @@ import { ProdRwRscServerGlobal } from '@redwoodjs/vite/rwRscGlobal'
 
 // @ts-expect-error no types
 import styles from './App.module.css'
-import { Counter } from './Counter'
+import { onSend } from './chat'
+import { Form } from './Form'
 
 import './App.css'
 
@@ -19,8 +20,7 @@ const App = ({ name = 'Anonymous' }) => {
       <Assets />
       <div style={{ border: '3px red dashed', margin: '1em', padding: '1em' }}>
         <h1 className={styles.title}>Hello {name}!!</h1>
-        <h3>This is a server component.</h3>
-        <Counter />
+        <Form onSend={onSend} />
       </div>
     </>
   )
